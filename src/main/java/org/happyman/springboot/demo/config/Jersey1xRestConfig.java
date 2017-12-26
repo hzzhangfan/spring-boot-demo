@@ -22,7 +22,9 @@ public class Jersey1xRestConfig {
         bean.addInitParameter(
                 "com.sun.jersey.config.property.packages",
                 "org.happyman.springboot.demo.rest.resources;com.fasterxml.jackson.jaxrs.json");
-//        bean.addInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true"); // jersey支持json输出的配置项
+        // jersey支持json输出的配置项,但由于使用jersey-json后在启动springboot时出现找不到相关jar包的警告信息（不影响运行），
+        // 为求完美改用com.fasterxml.jackson.jaxrs.json来序列化json
+        //bean.addInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true"); 
         bean.addUrlPatterns("/rest/*");
         bean.setName("rest");
 
