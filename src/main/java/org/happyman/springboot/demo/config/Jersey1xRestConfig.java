@@ -6,6 +6,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.ws.rs.ApplicationPath;
 /**
  * 针对Jersey 1.x的spring-boot兼容配置
  * Created by Administrator on 2017/12/25.
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableAutoConfiguration
+@ApplicationPath("/rest")
 public class Jersey1xRestConfig {
     @Bean
     public FilterRegistrationBean jersey() {
